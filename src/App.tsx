@@ -1,15 +1,13 @@
-import { useState } from 'react'
-import { DataContextProvider } from './context/dataContext'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+//* Components
+import Profile from './components/profile'
+import UserList from './components/userList'
 
 function App() {
   return (
     <>
-      <DataContextProvider>
-
-      </DataContextProvider>
+      <UserList />
+      <Profile />
     </>
   )
 }
