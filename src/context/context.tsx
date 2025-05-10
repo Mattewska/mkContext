@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react"
+import React, { createContext, useContext, useState } from "react"
 
 interface contextProps {
     contextValue: string,
@@ -12,9 +12,17 @@ export const initContext = createContext<contextProps | undefined>(undefined);
 
     
 
-    export const providerContext = ({children}: providerProps) => {
-        const [ contextValue, setContextValue ] = useState("");
-        return (
-            <initContext.Provider value={{ contextValue, setContextValue }}>{ children }</initContext.Provider>
-        );
-    }
+export const providerContext = ({children}: providerProps) => {
+    const [ contextValue, setContextValue ] = useState("");
+    return (
+        <initContext.Provider value={{ contextValue, setContextValue }}>{ children }</initContext.Provider>
+    );
+}
+
+export function ContextUse(){
+    const context = useContext(initContext);
+    if(context === undefined){
+        throw new Error(`Error ${Error.name}`)
+    };
+    return context;
+}
