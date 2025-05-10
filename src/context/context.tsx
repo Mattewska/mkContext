@@ -12,7 +12,7 @@ export const initContext = createContext<contextProps | undefined>(undefined);
 
     
 
-export const providerContext = ({children}: providerProps) => {
+export const ProviderContext = ({children}: providerProps) => {
     const [ contextValue, setContextValue ] = useState("");
     return (
         <initContext.Provider value={{ contextValue, setContextValue }}>{ children }</initContext.Provider>
