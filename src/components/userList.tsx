@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { MyContext } from "./../App"
+import { MyContext } from "../App"
 
 function userList() {
 
