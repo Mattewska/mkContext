@@ -1,16 +1,5 @@
 import { useState } from "react";
-
-export function Square({ value, squareFunction }) {
-  //const [squareValue, setSquareValue] = useState("");
-
-  return (
-    <>
-      <button className="square" onClick={squareFunction}>
-        {value}
-      </button>
-    </>
-  );
-}
+import { Square } from "./components/Square"
 
 export default function Board() {
   const [squareValue, setSquareValue] = useState(Array(9).fill(null));
